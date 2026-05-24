@@ -53,6 +53,12 @@ export type WebSiteConfig = {
         speakerIds: Speakers;
         fullSchedulesUrl: string;
     };
+    topics: {
+        last: {
+            cont: string,
+            sessions: string
+        }
+    }
     timetable: {
         halls: string[];
         indicoExportUrl: string;

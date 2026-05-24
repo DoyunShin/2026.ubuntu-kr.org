@@ -87,5 +87,7 @@
     "timetable_featured": "주요 연사",
     "timetable_difficulty": "난이도",
     "timetable_details": "자세히 보기",
-    "topics_description": "어떤 주제로 진행되는지 궁금하신가요? 여기에서 분류를 확인하실 수 있습니다."
+    "topics_description": "발표할 내용이 망설여지나요? 발표자 분들이 어떤 주제로 발표하셨는지 궁금하신가요? 여기에서 확인해 보세요.",
+    "topics_total_last_year": "작년에는 {count}개의 강연이 진행되었습니다.",
+    "topics_total_this_year": "올해에는 {count}개의 강연이 진행됩니다."
 }

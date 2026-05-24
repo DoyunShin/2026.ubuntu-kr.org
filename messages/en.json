@@ -87,5 +87,7 @@
     "timetable_featured": "Featured Session",
     "timetable_difficulty": "Difficulty",
     "timetable_details": "Show details",
-    "topics_description": "Are you looking for topics of programs? You can check here."
+    "topics_description": "Are you unsure about what to present? Curious about the topics other presenters have covered? Check them out here.",
+    "topics_total_last_year": "{count} talk(s) presented last year.",
+    "topics_total_this_year": "{count} talk(s) available this year."
 }

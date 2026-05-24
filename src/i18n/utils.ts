@@ -9,10 +9,10 @@ export type MessageFunction = (
 export type TranslationKey = MessageKey;
 export type { Locale };
 
-export function useTranslations(locale?: Locale) {
+export function useTranslations(locale?: Locale, options?: Record<string, never>) {
   const resolvedLocale = toLocale(locale) ?? baseLocale;
 
   return function t(key: MessageKey) {
-    return (messages[key] as MessageFunction)({}, { locale: resolvedLocale });
+    return (messages[key] as MessageFunction)(options ?? {}, { locale: resolvedLocale });
   };
 }

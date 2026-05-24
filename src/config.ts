@@ -169,6 +169,12 @@ export const WebsiteConfig = {
     //     ],
         fullSchedulesUrl: "https://events.canonical.com/event/126/contributions/"
     },
+    topics: {
+        last: {
+            cont: "https://events.canonical.com/export/event/126.json?detail=contributions&occ=yes&pretty=yes",
+            sessions: "https://events.canonical.com/event/126/contributions/",
+        }
+    },
     timetable: {
         halls: ["jeju", "donghae", "dokdo"],
         indicoExportUrl: "https://events.canonical.com/export/timetable/126.json",

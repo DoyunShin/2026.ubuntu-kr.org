@@ -2,9 +2,10 @@
 import { getRelativeLocaleUrlList } from 'astro:i18n';
 import { WebsiteConfig } from "../../../config";
 import jsdom from "jsdom";
-import { useTranslations } from "../../../i18n/utils.ts";
-import { extractLocaleFromUrl } from "../../../paraglide/runtime";
 import Shell from "@layouts/Shell.astro";
+import { extractLocaleFromUrl, setLocale } from '@paraglide/runtime';
+import { m } from "@paraglide/messages";
+import { servicesVersion } from 'typescript';
 
 type TopicTrack = {
     title: string;
@@ -48,20 +49,22 @@ const blogFeedXml = new window.DOMParser().parseFromString(
     await blogFeedRaw.text(),
     "text/html",
 );
+const contResponse = await fetch(WebsiteConfig.featuredSpeakers.indicoExportUrl);
+const contResJson = await contResponse.json();
+const fullSessionInfo = contResJson.results
+    ? contResJson.results[0].contributions
+    : null;
 const pageContent = blogFeedXml.querySelector(".page-content");
-
-
-
 const topicTracks = parseTopicTracks(pageContent);
 const locale = extractLocaleFromUrl(Astro.url);
-const m = useTranslations(locale);
+setLocale(locale ?? "ko");
 ---
 
-<Shell title={m("nav_programs_topics")}>
+<Shell title={m["nav_programs_topics"]()}>
 <div class="p-section p-strip is-shallow" role="main">
     <div class="grid-row">
-        <h1>{m("nav_programs_topics")}</h1>
-        <p>{m("topics_description")}</p>
+        <h1>{m["nav_programs_topics"]()}</h1>
+        <p>{m["topics_description"]()}</p>
         <hr class="p-rule">
     </div>
     <div class="grid-row">
@@ -71,6 +74,16 @@ const m = useTranslations(locale);
                 const tabId = `topic-track-tab-${trackId}`;
                 const panelId = `topic-track-panel-${trackId}`;
                 const trackBreak = track.title.split("(");
+
+                const talks = fullSessionInfo.filter((session: { track: string })  => {
+                    if (session.track && session.track.trim() === track.title.trim()) {
+                        return true;
+                    } else if (session.track === "데이터와 인공지능 (Data and AI)" && track.title === "인공지능과 에이전트 (AI and Agent)") {
+                        return true;
+                    }
+
+                    return false;
+                });
 
                 return (
                     <li class="p-accordion__group grid-col">
@@ -89,12 +102,17 @@ const m = useTranslations(locale);
                             </button>
                         </div>
                         <div
-                            class="description editor-output p-accordion__panel"
+                            class="p-accordion__panel"
                             id={panelId}
                             aria-hidden="true"
-                            aria-labelledby={tabId}
-                            set:html={track.descriptionHtml}
-                        />
+                            aria-labelledby={tabId}>
+                            <div id="track-count">
+                                <a href={WebsiteConfig.topics.last.sessions} target="_blank">
+                                    {m["topics_total_last_year"]({ count: talks.length})}
+                                </a>
+                            </div>
+                            <div set:html={track.descriptionHtml} />
+                        </div>
                     </li>
                 );
             })}
