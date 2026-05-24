@@ -1,0 +1,139 @@
+---
+import { getRelativeLocaleUrlList } from 'astro:i18n';
+import { WebsiteConfig } from "../../../config";
+import jsdom from "jsdom";
+import { useTranslations } from "../../../i18n/utils.ts";
+import { extractLocaleFromUrl } from "../../../paraglide/runtime";
+import Shell from "@layouts/Shell.astro";
+
+type TopicTrack = {
+    title: string;
+    code?: string;
+    descriptionHtml: string;
+};
+
+export function getStaticPaths() {
+	return getRelativeLocaleUrlList().map((locale) => {
+		let localeItem = locale.split('/')[1];
+		return {
+			params: { locale: localeItem },
+		};
+	});
+}
+
+function parseTopicTracks(content: Element | null): TopicTrack[] {
+    return Array.from(content?.querySelectorAll(".tracks > li") ?? [])
+        .map((element) => {
+            const title = element.querySelector(":scope > .track-title h3")?.textContent?.trim() ?? "";
+            const code = element.querySelector(":scope > .track-title .track-code")?.textContent?.trim();
+            const descriptionHtml = element.querySelector(":scope > .description")?.innerHTML.trim() ?? "";
+
+            return {
+                title,
+                code,
+                descriptionHtml,
+            };
+        })
+        .filter((track) => track.title && track.descriptionHtml);
+}
+
+function getTrackId(track: TopicTrack, index: number) {
+    return (track.code || `track-${index}`).replace(/[^a-zA-Z0-9_-]/g, "-");
+}
+
+const { JSDOM } = jsdom;
+const window = new JSDOM().window;
+const blogFeedRaw = await fetch(`${WebsiteConfig.indicoBase}/program`);
+const blogFeedXml = new window.DOMParser().parseFromString(
+    await blogFeedRaw.text(),
+    "text/html",
+);
+const pageContent = blogFeedXml.querySelector(".page-content");
+
+
+
+const topicTracks = parseTopicTracks(pageContent);
+const locale = extractLocaleFromUrl(Astro.url);
+const m = useTranslations(locale);
+---
+
+<Shell title={m("nav_programs_topics")}>
+<div class="p-section p-strip is-shallow" role="main">
+    <div class="grid-row">
+        <h1>{m("nav_programs_topics")}</h1>
+        <p>{m("topics_description")}</p>
+        <hr class="p-rule">
+    </div>
+    <div class="grid-row">
+        <ul class="tracks flexcol f-j-space-between grid-col p-accordion p-accordion__list">
+            {topicTracks.map((track, index) => {
+                const trackId = getTrackId(track, index);
+                const tabId = `topic-track-tab-${trackId}`;
+                const panelId = `topic-track-panel-${trackId}`;
+                const trackBreak = track.title.split("(");
+
+                return (
+                    <li class="p-accordion__group grid-col">
+                        <div class="track-title p-accordion__heading" role="heading" aria-level="3">
+                            <button
+                                class="p-accordion__tab"
+                                type="button"
+                                id={tabId}
+                                aria-controls={panelId}
+                                aria-expanded="false"
+                            >
+                                <span>
+                                    {trackBreak[0]} {`(${trackBreak[1]}`}
+                                    {track.code && <span class="p-chip">{track.code}</span>}
+                                </span>
+                            </button>
+                        </div>
+                        <div
+                            class="description editor-output p-accordion__panel"
+                            id={panelId}
+                            aria-hidden="true"
+                            aria-labelledby={tabId}
+                            set:html={track.descriptionHtml}
+                        />
+                    </li>
+                );
+            })}
+        </ul>
+    </div>
+</div>
+
+<script>
+    document.querySelectorAll(".p-accordion__tab").forEach((tab) => {
+        tab.addEventListener("click", () => {
+            const panelId = tab.getAttribute("aria-controls");
+            const panel = panelId ? document.getElementById(panelId) : null;
+            const isExpanded = tab.getAttribute("aria-expanded") === "true";
+
+            tab.setAttribute("aria-expanded", String(!isExpanded));
+            panel?.setAttribute("aria-hidden", String(isExpanded));
+        });
+    });
+</script>
+</Shell>
+
+<style>
+
+.p-accordion__tab, .p-accordion__tab > span {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.p-accordion__tab > span {
+    width: 100%;
+    justify-content: space-between;
+}
+
+.p-accordion__tab::before {
+    flex-shrink: 0;
+}
+
+.p-chip {
+    margin: 0;
+}
+</style>

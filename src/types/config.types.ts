@@ -14,6 +14,7 @@ export type WebSiteConfig = {
     siteTitle: string;
     siteDescription: string;
     socialMedia: { [key: string]: string };
+    indicoBase: string,
     faviconPath: string;
     navigation: (locale: Locale) => Array<{
         label: string;

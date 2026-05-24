@@ -13,6 +13,7 @@ export const WebsiteConfig = {
     socialMedia: {
         "twitter": "UbuntuKrOrg"
     },
+    indicoBase: "https://events.canonical.com/event/153",
     faviconPath: UCKLogo.src,
     navigation: (currentLocale?: Locale) => {
         const locale = currentLocale ?? baseLocale;
@@ -40,6 +41,10 @@ export const WebsiteConfig = {
                     {
                         label: m["nav_programs_cfp_mdc"](),
                         link: "https://deb.li/kr26cfp"
+                    },
+                    {
+                        label: m["nav_programs_topics"](),
+                        link: `/${locale}/programs/topics`
                     }
             //         {
             //             label: m["nav_programs_timetable"](),
