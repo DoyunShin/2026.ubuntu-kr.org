@@ -122,16 +122,19 @@ function setTheme(theme: Theme) {
   switch(theme) {
     case "dark":
       document.body.classList.remove("is-paper");
+      document.body.classList.remove("is-light");
       document.body.classList.add("is-dark");
       deobserveThemeChange();
       break;
     case "paper":
       document.body.classList.remove("is-dark");
+      document.body.classList.remove("is-light");
       document.body.classList.add("is-paper");
       deobserveThemeChange();
       break;
     case "system":
       observeThemeChange();
+      break;
     case "light":
     default:
       document.body.classList.remove("is-dark");
@@ -144,7 +147,6 @@ function setTheme(theme: Theme) {
 const systemThemeMode = window.matchMedia("(prefers-color-scheme: dark)");
 
 function observeThemeChange() {
-  
   systemThemeMode.addEventListener("change", (e: MediaQueryListEvent) => {
     if (e.matches) {
       setTheme("dark");
