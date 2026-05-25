@@ -1,5 +1,6 @@
 {
     "$schema": "https://inlang.com/schema/inlang-message-format",
+    "skip_content": "본문으로 바로 가기",
     "mainBanner_cohost": "Cohosted with MiniDebConf Korea",
     "mainBanner_dates": "2026년 8월 29일",
     "mainBanner_venue": "한국마이크로소프트 13층 *",

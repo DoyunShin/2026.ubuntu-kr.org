@@ -3,8 +3,8 @@ import Layout from '@layouts/Layout.astro';
 import Navigation from '@components/Navigation.astro';
 import LocaleSwither from '@components/LocaleSwither.astro';
 import { WebsiteConfig } from "../config";
-import { useTranslations } from "../i18n/utils.ts";
-import { extractLocaleFromUrl } from "../paraglide/runtime";
+import { extractLocaleFromUrl, setLocale } from "@paraglide/runtime";
+import { m } from "@paraglide/messages";
 import ThemeSwither from '@components/ThemeSwither.astro';
 interface Props {
 	title?: string;
@@ -12,12 +12,14 @@ interface Props {
 
 const { title } = Astro.props;
 const locale = extractLocaleFromUrl(Astro.url);
-const m = useTranslations(locale);
+setLocale(locale ?? "ko");
 ---
 
 <Layout title={title}>
 	<Navigation/>
-	<slot />
+    <main id="mainContent">
+        <slot />
+    </main>
     <footer class="l-footer--sticky p-strip--dark" role="contentinfo">
         <div class="u-fixed-width">
             <LocaleSwither/>
@@ -97,21 +99,21 @@ const m = useTranslations(locale);
                     <ul class="p-inline-list--middot">
                         <li class="p-inline-list__item">
                             <a href={WebsiteConfig.footer.contactUs}>
-                                <small>{m("footer_contact")}</small>
+                                <small>{m["footer_contact"]()}</small>
                             </a>
                         </li>
                         <li class="p-inline-list__item">
                             <a href={WebsiteConfig.footer.srcRepoUrl}>
-                                <small>{m("footer_source")}</small>
+                                <small>{m["footer_source"]()}</small>
                             </a>
                         </li>
                         <li class="p-inline-list__item">
                             <a href="https://ubucon.org">
-                                <small>{m("footer_ubucons")}</small>
+                                <small>{m["footer_ubucons"]()}</small>
                             </a>
                         </li>
                         <li class="p-inline-list__item">
-                            <small>{m("footer_other_years")}</small>
+                            <small>{m["footer_other_years"]()}</small>
                             <a href="https://2023.ubuntu-kr.org">
                                 <small>2023</small>
                             </a>
@@ -124,7 +126,7 @@ const m = useTranslations(locale);
                         </li>
                     </ul>
                     <span class="ukc-floating-ui">
-                        <button onclick="body.scrollIntoView({ behavior: 'smooth' })" aria-label={m("footer_top")}>
+                        <button onclick="body.scrollIntoView({ behavior: 'smooth' })" aria-label={m["footer_top"]()}>
                             <i class="p-icon--chevron-up" />
                         </button>
                     </span>
