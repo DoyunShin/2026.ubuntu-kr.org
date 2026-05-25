@@ -147,6 +147,12 @@ function setTheme(theme: Theme) {
 const systemThemeMode = window.matchMedia("(prefers-color-scheme: dark)");
 
 function observeThemeChange() {
+  if (systemThemeMode.matches) {
+    setTheme("dark");
+  } else {
+    setTheme("light");
+  }
+
   systemThemeMode.addEventListener("change", (e: MediaQueryListEvent) => {
     if (e.matches) {
       setTheme("dark");
