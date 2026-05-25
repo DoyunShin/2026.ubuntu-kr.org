@@ -16,7 +16,8 @@ setLocale(locale ?? "ko");
 ---
 
 <Layout title={title}>
-	<Navigation/>
+    <a id="skip-to-main-content" href="#mainContent" class="p-link--skip">{m["skip_content"]()}</a>
+    <Navigation/>
     <main id="mainContent">
         <slot />
     </main>
@@ -133,6 +134,34 @@ setLocale(locale ?? "ko");
                 </div>
             </nav>
         </div>
-        
     </footer>
+    <script is:inline>
+        (() => {
+            const skipLink = document.getElementById("skip-to-main-content");
+            if (!skipLink) return;
+
+            const keepSkipLinkFirst = () => {
+                if (document.body.firstChild !== skipLink) {
+                    document.body.insertBefore(skipLink, document.body.firstChild);
+                }
+            };
+
+            keepSkipLinkFirst();
+            new MutationObserver(keepSkipLinkFirst).observe(document.body, {
+                childList: true,
+            });
+        })();
+    </script>
 </Layout>
+
+<style>
+    .p-link--skip {
+        width: 100%;
+    }
+
+    .p-link--skip:focus {
+        left: 0;
+        top: 0;
+        z-index: 10000;
+    }
+</style>

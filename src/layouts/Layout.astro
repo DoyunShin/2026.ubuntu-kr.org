@@ -1,7 +1,6 @@
 ---
 import { WebsiteConfig } from "../config";
-import { extractLocaleFromUrl, setLocale } from "@paraglide/runtime";
-import { m } from "@paraglide/messages";
+import { extractLocaleFromUrl } from "@paraglide/runtime";
 
 interface Props {
 	title?: string;
@@ -10,7 +9,6 @@ interface Props {
 
 const { title, description } = Astro.props;
 const locale = extractLocaleFromUrl(Astro.url);
-setLocale(locale ?? "ko");
 ---
 
 <!doctype html>
@@ -41,25 +39,7 @@ setLocale(locale ?? "ko");
 		<title>{title ? `${title} | ${WebsiteConfig.siteTitle}` : WebsiteConfig.siteTitle}</title>
 	</head>
 	<body class="is-dark">
-		<a id="skip-to-main-content" href="#mainContent" class="p-link--skip">{m["skip_content"]()}</a>
 		<slot />
-		<script is:inline>
-			(() => {
-				const skipLink = document.getElementById("skip-to-main-content");
-				if (!skipLink) return;
-
-				const keepSkipLinkFirst = () => {
-					if (document.body.firstChild !== skipLink) {
-						document.body.insertBefore(skipLink, document.body.firstChild);
-					}
-				};
-
-				keepSkipLinkFirst();
-				new MutationObserver(keepSkipLinkFirst).observe(document.body, {
-					childList: true,
-				});
-			})();
-		</script>
 	</body>
 	<script is:inline src="https://loopback.social/banner.js" data-color="#262626" defer></script>
 </html>
@@ -98,12 +78,6 @@ body {
 	position: fixed;
 	bottom: 0rem;
 	right: 1rem;
-	z-index: 10000;
-}
-
-.p-link--skip:focus {
-	left: 0;
-	top: 0;
 	z-index: 10000;
 }
 
