@@ -17,7 +17,7 @@ export const patrons = [
     },
     {
         name: "김석현",
-        org: "(주)볼타코퍼레이션 (Bolta Corporation)"
+        org: "42dot Inc."
     }
 ]
 
