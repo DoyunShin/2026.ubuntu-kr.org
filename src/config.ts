@@ -101,7 +101,7 @@ export const WebsiteConfig = {
     subNavigation: [
         {
             label: "MiniDebConf Korea",
-            link: "https://busan2025.mini.debconf.org/about/minidc/",
+            link: "https://korea2026.mini.debconf.org/",
             childs: []
         },
         {
@@ -127,18 +127,6 @@ export const WebsiteConfig = {
                 {
                     label: m["nav_buy_ticket"](),
                     link: "https://2026.ubuntu-kr.org/tickets",
-                    class: "p-button--positive",
-                    target: "_blank"
-                },
-                {
-                    label: m["nav_programs_cfp"](),
-                    link: "https://2026.ubuntu-kr.org/cfp",
-                    class: "p-button--positive",
-                    target: "_blank"
-                },
-                {
-                    label: m["nav_programs_cfp_mdc"](),
-                    link: "https://deb.li/kr26cfp",
                     class: "p-button--positive",
                     target: "_blank"
                 },
