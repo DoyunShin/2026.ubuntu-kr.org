@@ -1,4 +1,4 @@
-import uck25Logo from "@assets/logo.svg";
+import uck26Logo from "@assets/logo.svg";
 import hoehyeongProfile from "@assets/committiee/hoehyeong.jpg";
 import inahProfile from "@assets/committiee/inahHwang.jpeg";
 import euiseoProfile from "@assets/committiee/euiseo.jpg";
@@ -13,13 +13,45 @@ type CommitteeMember = {
 
 export const committeeMembers: CommitteeMember[] = [
     {
-        name: "Junsang Mun",
+        name: "Han Lim",
         team: "Ubuntu Korea Community",
         role: [
+            "role_general",
+            "role_sponsorship_finances",
             "role_venue_safety",
+        ],
+        profileImageUrl: uck26Logo.src
+    },
+    {
+        name: "Euiseo Cha",
+        team: "Ubuntu Korea Community",
+        role: [
+            "role_mdc",
+            "role_sponsorship_finances",
+            "role_contents"
+        ],
+        profileImageUrl: euiseoProfile.src
+    },
+    {
+        name: "Giyeon Bang",
+        team: "C++ Korea",
+        role: [
+            "role_web_video",
+            "role_venue_safety",
+            "role_marketing_design",
+            "role_mdc"
+        ],
+        profileImageUrl: "https://2022.ubucon.asia/about/giyeon_bang.jpg"
+    },
+    {
+        name: "Gyuseok Jung",
+        team: "Ubuntu Korea Community",
+        role: [
+            "role_general",
+            "role_contents",
             "role_marketing_design"
         ],
-        profileImageUrl: "https://discourse.ubuntu-kr.org/user_avatar/discourse.ubuntu-kr.org/junmoon/144/12427_2.png"
+        profileImageUrl: "https://avatars.githubusercontent.com/u/9061758?v=4"
     },
     {
         name: "Youngbin Han",
@@ -34,14 +66,14 @@ export const committeeMembers: CommitteeMember[] = [
         profileImageUrl: "https://avatars.githubusercontent.com/u/1916739?v=4",
     },
     {
-        name: "Minseong Cho",
-        team: "Ubuntu Korea Community",
+        name: "Sejin Kim",
+        team: "",
         role: [
             "role_general",
+            "role_sponsorship_finances",
             "role_venue_safety",
-            "role_sponsorship_finances"
         ],
-        profileImageUrl: "https://avatars.githubusercontent.com/u/52643858?v=4"
+        profileImageUrl: uck26Logo.src
     },
     {
         name: "Sangbin Lim",
@@ -63,29 +95,10 @@ export const committeeMembers: CommitteeMember[] = [
         profileImageUrl: "https://avatars.githubusercontent.com/u/7126454?v=4"
     },
     {
-        name: "Giyeon Bang",
-        team: "C++ Korea",
-        role: [
-            "role_web_video",
-            "role_venue_safety"
-        ],
-        profileImageUrl: "https://2022.ubucon.asia/about/giyeon_bang.jpg"
-    },
-    {
-        name: "Gyuseok Jung",
-        team: "Ubuntu Korea Community",
-        role: [
-            "role_contents",
-            "role_web_video"
-        ],
-        profileImageUrl: "https://avatars.githubusercontent.com/u/9061758?v=4"
-    },
-    {
         name: "Sangkon Han",
         team: "Ubuntu Korea Community",
         role: [
-            "role_contents",
-            "role_web_video"
+            "role_contents"
         ],
         profileImageUrl: "https://2022.ubucon.asia/about/sangkon_han.jpg"
     },
@@ -94,61 +107,70 @@ export const committeeMembers: CommitteeMember[] = [
         team: "Ubuntu Korea Community",
         role: [
             "role_venue_safety",
-            "role_sponsorship_finances"
         ],
         profileImageUrl: "https://discourse.ubuntu-kr.org/user_avatar/discourse.ubuntu-kr.org/choo121600/144/12050_2.png"
     },
     {
-        name: "Hoehyeong Jung",
+        name: "Minseok Jang",
         team: "Ubuntu Korea Community",
         role: [
-            "role_web_video",
-            "role_contents"
-        ],
-        profileImageUrl: hoehyeongProfile.src
-    },
-    {
-        name: "Tae Yong Lee",
-        team: "Ubuntu Korea Community",
-        role: [
-            "role_venue_safety",
             "role_contents",
-            "role_sponsorship_finances"
-        ],
-        profileImageUrl: "https://2024.ubuntu-kr.org/avatars/taeyong.jpg"
-    },
-    {
-        name: "Soyeon Kwon",
-        team: "Ubuntu Korea Community",
-        role: [
-            "role_marketing_design",
+            "role_venue_safety",
             "role_web_video"
         ],
-        profileImageUrl: "https://2024.ubuntu-kr.org/avatars/soyeon.png"
+        profileImageUrl: uck26Logo.src
     },
     {
-        name: "Euiseo Cha",
+        name: "Hyeongjun Kwon",
         team: "Ubuntu Korea Community",
         role: [
             "role_sponsorship_finances",
-            "role_contents"
+            "role_venue_safety",
         ],
-        profileImageUrl: euiseoProfile.src
+        profileImageUrl: uck26Logo.src
     },
     {
-        name: "Inah Hwang",
+        name: "Jinseok An",
         team: "Ubuntu Korea Community",
         role: [
-            "role_sponsorship_finances"
+            "role_marketing_design",
+            "role_venue_safety"
         ],
-        profileImageUrl: inahProfile.src
+        profileImageUrl: uck26Logo.src
     },
     {
-        name: "Han Lim",
+        name: "Hojun Lee",
+        team: "Debian",
+        role: [
+            "role_mdc",
+            "role_venue_safety"
+        ],
+        profileImageUrl: uck26Logo.src
+    },
+    {
+        name: "Jongmin Kim",
+        team: "Debian",
+        role: [
+            "role_mdc",
+            "role_venue_safety"
+        ],
+        profileImageUrl: uck26Logo.src
+    },
+    {
+        name: "Changwoo Ryu",
+        team: "Debian",
+        role: [
+            "role_mdc",
+            "role_venue_safety"
+        ],
+        profileImageUrl: uck26Logo.src
+    },
+    {
+        name: "Seyong Park",
         team: "",
         role: [
-            "role_sponsorship_finances"
+            "role_venue_safety",
         ],
-        profileImageUrl: uck25Logo.src
-    }
+        profileImageUrl: uck26Logo.src
+    },
 ]

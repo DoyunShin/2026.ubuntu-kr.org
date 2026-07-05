@@ -32,9 +32,9 @@ export default function CommitteeMembers() {
             <button type="submit" className="p-search-box__button"><i className="p-icon--search">{m("role_search")}</i></button>
         </form>
 
-        <ul className="row">
+        <ul className="grid-row">
             {memberList.map((member, idx) => (
-                <li className="col-4 col-medium-3" key={idx}>
+                <li className="grid-col-2" key={idx}>
                     <div className="p-media-object--large">
                         <img
                             src={member.profileImageUrl}
