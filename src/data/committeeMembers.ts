@@ -1,7 +1,4 @@
 import uck26Logo from "@assets/logo.svg";
-import hoehyeongProfile from "@assets/committiee/hoehyeong.jpg";
-import inahProfile from "@assets/committiee/inahHwang.jpeg";
-import euiseoProfile from "@assets/committiee/euiseo.jpg";
 import type { TranslationKey } from "../i18n/utils.ts";
 
 type CommitteeMember = {
