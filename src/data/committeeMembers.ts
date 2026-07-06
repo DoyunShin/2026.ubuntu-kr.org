@@ -30,7 +30,7 @@ export const committeeMembers: CommitteeMember[] = [
             "role_sponsorship_finances",
             "role_contents"
         ],
-        profileImageUrl: euiseoProfile.src
+        profileImageUrl: "https://media.discordapp.net/attachments/1470992394513289453/1523537121519079706/LEGQkMFl_400x400.jpg?ex=6a4c7803&is=6a4b2683&hm=805b2df3c895d88d70262f7bf20c16c64b87d848e9bb76634991b9cfdff4a743&="
     },
     {
         name: "Giyeon Bang",
@@ -66,7 +66,7 @@ export const committeeMembers: CommitteeMember[] = [
         profileImageUrl: "https://avatars.githubusercontent.com/u/1916739?v=4",
     },
     {
-        name: "Sejin Kim",
+        name: "Sae Jin Kim",
         team: "",
         role: [
             "role_general",
