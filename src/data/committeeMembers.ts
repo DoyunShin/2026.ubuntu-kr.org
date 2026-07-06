@@ -154,7 +154,7 @@ export const committeeMembers: CommitteeMember[] = [
             "role_mdc",
             "role_venue_safety"
         ],
-        profileImageUrl: uck26Logo.src
+        profileImageUrl: "https://avatars.githubusercontent.com/u/3622008?v=4"
     },
     {
         name: "Changwoo Ryu",
