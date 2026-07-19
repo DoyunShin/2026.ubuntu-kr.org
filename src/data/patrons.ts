@@ -22,6 +22,10 @@ export const patrons = [
     {
         name: "김종민",
         org: "Debian"
+    },
+    {
+        name: "유현아",
+        org: "한빛앤"
     }
 ]
 
