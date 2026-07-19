@@ -26,6 +26,10 @@ export const patrons = [
     {
         name: "유현아",
         org: "한빛앤"
+    },
+    {
+        name: "윤정민",
+        org: "우분투한국커뮤니티"
     }
 ]
 
