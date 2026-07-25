@@ -94,6 +94,7 @@ function setupContextualMenu(menu: HTMLElement) {
 
       if (theme) {
         window.localStorage.setItem('theme', theme);
+        window.dispatchEvent(new Event("themechange"));
         setTheme(theme);
         document.body.scrollIntoView({ behavior: "smooth" });
       }

@@ -1,8 +1,10 @@
 
-import { useState, type MouseEvent } from "react";
+import { useLayoutEffect, useState, type MouseEvent } from "react";
 import Markdown from "marked-react";
-import { useTranslations, type Locale } from "../i18n/utils.ts";
-import { baseLocale } from "../paraglide/runtime.js";
+import * as m from "../paraglide/messages";
+import { setLocale, type Locale } from "@paraglide/runtime";
+import useTheme from "src/hooks/useTheme";
+
 type SponsorLogoAndModalProps = {
     name: string,
     level: string,
@@ -11,11 +13,15 @@ type SponsorLogoAndModalProps = {
     description: string,
     url: string,
     showPopup: Boolean,
-    index: number
+    index: number,
+    invertedLogo?: string,
+    prevSponsored?: number
 }
+
 export default function SponsorLogoAndModal(props: SponsorLogoAndModalProps) {
-    const m = useTranslations(props.locale ?? baseLocale);
     const [modalOpen, setModalOpen] = useState(false);
+    const { theme } = useTheme();
+
     const closeHandler = (e: KeyboardEvent|MouseEvent<HTMLButtonElement>) => {
         if (e.type === "click" || (e as KeyboardEvent).key === "Escape") {
             setModalOpen(false);
@@ -23,6 +29,10 @@ export default function SponsorLogoAndModal(props: SponsorLogoAndModalProps) {
         }
     };
     const closeKeyListener = (e: KeyboardEvent) => closeHandler(e);
+    setLocale(props.locale ?? "ko");
+
+
+    console.log(theme);
 
     return (
         <>
@@ -32,23 +42,52 @@ export default function SponsorLogoAndModal(props: SponsorLogoAndModalProps) {
                     document.addEventListener("keydown", closeKeyListener);
                 }
             }} aria-controls={`modal-${props.level}-${props.index}`}>
-                <img src={props.logoImageSrc} alt={props.name} loading="lazy" decoding="async" style={{ maxHeight: props.level === "Community" ? "3rem" : "8rem" }}/>
+                {props.prevSponsored &&
+                    <p aria-label={`Sponsored ${props.prevSponsored} times`} style={{ display: 'block', width: "100%", marginBottom: "-1rem", textAlign: "end" }}>
+                        <span className="p-badge">
+                            {props.prevSponsored}
+                        </span>
+                    </p>
+                }
+                <img src={
+                    theme === "dark" && props.invertedLogo 
+                        ? props.invertedLogo
+                        : props.logoImageSrc
+                    }
+                    alt={props.name} loading="lazy" decoding="async"
+                    style={{ maxHeight: props.level === "Community" ? "3rem" : "10rem" }}
+                />
             </button>
            
             <div className="p-modal" id={`modal-${props.level}-${props.index}`} style={{display: modalOpen && props.showPopup ? "flex" : "none"}}>
             <section className="p-modal__dialog" role="dialog" aria-modal={modalOpen && props.showPopup ? "true":"false"} aria-labelledby="modal-title" aria-describedby="modal-description">
                 <header className="p-modal__header">
-                    <h2 className="p-modal__title" id={`modal-${props.level}-${props.level}-title`}>{m("sponsor_about")}</h2>
+                    <h2 className="p-modal__title sponsor-title" id={`modal-${props.level}-${props.level}-title`}>
+                        <span>{m["sponsor_about"]()}</span>
+                        {props.prevSponsored &&
+                            <span className="p-chip " aria-label={`Sponsored ${props.prevSponsored} times`}>
+                                {m["sponsor_prev"]({ count: props.prevSponsored })}
+                            </span>
+                        }
+                    </h2>
                     <button className="p-modal__close" aria-label="Close active modal" aria-controls="modal" onClick={closeHandler}>Close</button>
                 </header>
-                <img src={props.logoImageSrc} alt={props.name} loading="lazy" decoding="async" style={{ maxHeight: "10rem" }} />
+                <div className="p-logo-section__items">
+                    <img src={
+                        theme === "dark" && props.invertedLogo 
+                            ? props.invertedLogo
+                            : props.logoImageSrc
+                        } alt={props.name} loading="lazy" decoding="async" 
+                        style={{ maxHeight: "10rem" }} className="p-logo-section__logo"
+                    />
+                </div>
                 <h1>{props.name}</h1>
                 <b>{props.level}</b>
                 <Markdown>
                     {props.description}
                 </Markdown>
                 <footer className="p-modal__footer">
-                <a href={props.url} target="_blank"><button className="p-button--positive u-no-margin--bottom">{m("visit_website")}</button></a>
+                <a href={props.url} target="_blank"><button className="p-button--positive u-no-margin--bottom">{m["visit_website"]()}</button></a>
                 </footer>
             </section>
             </div>

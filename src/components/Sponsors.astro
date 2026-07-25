@@ -1,45 +1,44 @@
 ---
 import { sponsors } from "@data/sponsors";
 import SponsorLogoAndModal from "@components/SponsorLogoAndModal.tsx";
-import { useTranslations } from "../i18n/utils.ts";
 import { extractLocaleFromUrl } from "../paraglide/runtime";
+import * as m from "../paraglide/messages";
 
 const locale = extractLocaleFromUrl(Astro.url);
-const m = useTranslations(locale);
 ---
 
-<div class="p-section">
-    <div class="row"><h2>{m("our_sponsors")}</h2></div>
+<section class="p-section sponsor-section">
+    <div class="grid-row"><h2>{m["our_sponsors"]()}</h2></div>
     {
         sponsors.map((level) => (
         <div class="p-section--shallow">
-                <div class="row">
-                    <hr class="p-rule" />
+            <div class="grid-row--25-75">
+                <div class="grid-col">
+                    <h3>{level.sponsorLevelName}</h3>
                 </div>
-                <div class="row">
-                    <div class="col-3">
-                        <h3>{level.sponsorLevelName}</h3>
-                    </div>
-                    <div class="col-9">
-                        <div class="row">
-                            {level.list.map((item, idx) => (
-                                <div class={`col-${level.sizeOnLargeScreen} col-medium-${level.sizeOnMediumScreen} col-small-${level.sizeOnSmallScreen}`} style={{ alignContent: "center" }}>
-                                    <SponsorLogoAndModal
-                                        name={item.name}
-                                        index={idx}
-                                        logoImageSrc={item.logoUrl}
-                                        description={item.description ?? ""}
-                                        url={item.url}
-                                        level={level.sponsorLevelName}
-                                        locale={locale}
-                                        showPopup={level.showPopup}
-                                        client:only="react" />
-                                </div>
-                            ))}
-                        </div>
+                <div class="grid-col p-logo-section">
+                    <hr class="p-rule" />
+                    <div class="grid-row p-logo-items">
+                        {level.list.map((item, idx) => (
+                            <div class={`grid-col-${level.sizeOnLargeScreen} grid-col-medium-${level.sizeOnMediumScreen} grid-col-small-${level.sizeOnSmallScreen} p-logo-item`}>
+                                <SponsorLogoAndModal
+                                    name={item.name}
+                                    index={idx}
+                                    logoImageSrc={item.logoUrl}
+                                    description={item.description ?? ""}
+                                    url={item.url}
+                                    level={level.sponsorLevelName}
+                                    locale={locale}
+                                    showPopup={level.showPopup}
+                                    invertedLogo={item.logoDarkTheme}
+                                    prevSponsored={item.prevSponsored}
+                                    client:only="react" />
+                            </div>
+                        ))}
                     </div>
                 </div>
             </div>
+        </div>
         ))
     }
-</div>
+</section>

@@ -1,6 +1,8 @@
 // import logoPlaceHolder from "@assets/logo_placeholder.svg";
-import canonicalLogo from "@assets/sponsors/ubuntu.svg";
-import awsLogo from "@assets/sponsors/aws.png"
+import canonicalLogo from "@assets/sponsors/ubuntu.png";
+import canonicalWhite from "@assets/sponsors/ubuntu_white.png";
+import awsLogo from "@assets/sponsors/aws.png";
+import awsWhite from "@assets/sponsors/aws_white.png";
 import ksugLogo from "@assets/sponsors/ksug.png";
 import groMetricLogo from "@assets/sponsors/grometric.svg";
 
@@ -8,9 +10,9 @@ import groMetricLogo from "@assets/sponsors/grometric.svg";
 export type Sponsor = {
     name: string,
     logoUrl: string,
+    logoDarkTheme?: string,
     url: string,
     description: string,
-    darkInvertBack?: boolean,
     prevSponsored?: number,
 }
 
@@ -34,9 +36,9 @@ export const sponsors = [
             {
                 name: "Ubuntu",
                 logoUrl: canonicalLogo.src,
+                logoDarkTheme: canonicalWhite.src,
                 url: "https://ubuntu.com/",
                 prevSponsored: 6,
-                darkInvertBack: true,
                 description: "Canonical은 대부분의 퍼블릭 클라우드 워크로드를 위한 OS이자 스마트 게이트웨이, 자율 주행 자동차 및 Advanced robot 등 새롭게 떠오르는 분야를 위한 OS인 Ubuntu를 개발 및 배포하는 회사입니다. Canonical은 상용 Ubuntu 사용자에게 엔터프라이즈 보안, 지원 및 서비스를 제공합니다."
             },
         ] as Sponsor[]
@@ -51,8 +53,8 @@ export const sponsors = [
             {
                 name: "Amazon Web Services Korea",
                 logoUrl: awsLogo.src,
+                logoDarkTheme: awsWhite.src,
                 url: "https://aws.amazon.com/ko/",
-                darkInvertBack: true,
                 description: "Amazon Web Services(AWS)는 전 세계적으로 분포한 데이터 센터에서 200개가 넘는 완벽한 기능의 서비스를 제공하는, 세계적으로 가장 포괄적이며, 널리 채택되고 있는 클라우드입니다. 빠르게 성장하는 스타트업, 대기업, 주요 정부 기관을 비롯한 수많은 고객이 AWS를 사용하여 비용을 절감하고, 민첩성을 향상시키고, 혁신 속도를 높이고 있습니다."
             },
         ] as Sponsor[]
