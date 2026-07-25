@@ -30,6 +30,10 @@ export const patrons = [
     {
         name: "윤정민",
         org: "우분투한국커뮤니티"
+    },
+    {
+        name: "김정현",
+        org: "CatapultLabs"
     }
 ]
 
