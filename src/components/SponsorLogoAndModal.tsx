@@ -31,8 +31,8 @@ export default function SponsorLogoAndModal(props: SponsorLogoAndModalProps) {
                     setModalOpen(true); 
                     document.addEventListener("keydown", closeKeyListener);
                 }
-            }} aria-controls={`modal-${props.level}-${props.index}`} style={{ width: "100%" }}>
-                <img src={props.logoImageSrc} alt={props.name} loading="lazy" decoding="async" style={ props.level !== "Community" ? { minWidth: "80%" } : { maxHeight: "5rem" }}/>
+            }} aria-controls={`modal-${props.level}-${props.index}`}>
+                <img src={props.logoImageSrc} alt={props.name} loading="lazy" decoding="async" style={{ maxHeight: props.level === "Community" ? "3rem" : "8rem" }}/>
             </button>
            
             <div className="p-modal" id={`modal-${props.level}-${props.index}`} style={{display: modalOpen && props.showPopup ? "flex" : "none"}}>
@@ -41,7 +41,7 @@ export default function SponsorLogoAndModal(props: SponsorLogoAndModalProps) {
                     <h2 className="p-modal__title" id={`modal-${props.level}-${props.level}-title`}>{m("sponsor_about")}</h2>
                     <button className="p-modal__close" aria-label="Close active modal" aria-controls="modal" onClick={closeHandler}>Close</button>
                 </header>
-                <img src={props.logoImageSrc} alt={props.name} loading="lazy" decoding="async" style={props.level !== "Community" ? { width: "100%" } : { maxHeight: "10rem" }} />
+                <img src={props.logoImageSrc} alt={props.name} loading="lazy" decoding="async" style={{ maxHeight: "10rem" }} />
                 <h1>{props.name}</h1>
                 <b>{props.level}</b>
                 <Markdown>
