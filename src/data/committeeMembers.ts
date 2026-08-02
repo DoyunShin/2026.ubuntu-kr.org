@@ -11,8 +11,8 @@ type CommitteeMember = {
 
 export const committeeMembers: CommitteeMember[] = [
     {
-        name: "Han Lim",
-        team: "Ubuntu Korea Community",
+        name: "임한",
+        team: "우분투한국커뮤니티",
         role: [
             "role_general",
             "role_sponsorship_finances",
@@ -21,8 +21,8 @@ export const committeeMembers: CommitteeMember[] = [
         profileImageUrl: uck26Logo.src
     },
     {
-        name: "Euiseo Cha",
-        team: "Ubuntu Korea Community",
+        name: "차의서",
+        team: "우분투한국커뮤니티",
         role: [
             "role_mdc",
             "role_sponsorship_finances",
@@ -31,7 +31,7 @@ export const committeeMembers: CommitteeMember[] = [
         profileImageUrl: euiseoProfile.src
     },
     {
-        name: "Giyeon Bang",
+        name: "방기연",
         team: "C++ Korea",
         role: [
             "role_web_video",
@@ -42,8 +42,8 @@ export const committeeMembers: CommitteeMember[] = [
         profileImageUrl: "https://2022.ubucon.asia/about/giyeon_bang.jpg"
     },
     {
-        name: "Gyuseok Jung",
-        team: "Ubuntu Korea Community",
+        name: "정규석",
+        team: "우분투한국커뮤니티",
         role: [
             "role_general",
             "role_contents",
@@ -52,8 +52,8 @@ export const committeeMembers: CommitteeMember[] = [
         profileImageUrl: "https://avatars.githubusercontent.com/u/9061758?v=4"
     },
     {
-        name: "Youngbin Han",
-        team: "Ubuntu Korea Community, Ubuntu LoCo Council",
+        name: "한영빈",
+        team: "우분투한국커뮤니티, Ubuntu LoCo Council",
         role: [
             "role_sponsorship_finances",
             "role_general",
@@ -64,7 +64,7 @@ export const committeeMembers: CommitteeMember[] = [
         profileImageUrl: "https://avatars.githubusercontent.com/u/1916739?v=4",
     },
     {
-        name: "Sae Jin Kim",
+        name: "김세진",
         team: "",
         role: [
             "role_general",
@@ -74,8 +74,8 @@ export const committeeMembers: CommitteeMember[] = [
         profileImageUrl: uck26Logo.src
     },
     {
-        name: "Sangbin Lim",
-        team: "Ubuntu Korea Community",
+        name: "임상빈",
+        team: "우분투한국커뮤니티",
         role: [
             "role_marketing_design",
             "role_web_video",
@@ -84,8 +84,8 @@ export const committeeMembers: CommitteeMember[] = [
         profileImageUrl: "https://avatars.githubusercontent.com/u/125565943?v=4"
     },
     {
-        name: "Jungmin Yoon",
-        team: "Ubuntu Korea Community",
+        name: "윤정민",
+        team: "우분투한국커뮤니티",
         role: [
             "role_web_video",
             "role_marketing_design"
@@ -93,24 +93,24 @@ export const committeeMembers: CommitteeMember[] = [
         profileImageUrl: "https://avatars.githubusercontent.com/u/7126454?v=4"
     },
     {
-        name: "Sangkon Han",
-        team: "Ubuntu Korea Community",
+        name: "한상곤",
+        team: "우분투한국커뮤니티",
         role: [
             "role_contents"
         ],
         profileImageUrl: "https://2022.ubucon.asia/about/sangkon_han.jpg"
     },
     {
-        name: "Yeonguk Choo",
-        team: "Ubuntu Korea Community",
+        name: "추영욱",
+        team: "우분투한국커뮤니티",
         role: [
             "role_venue_safety",
         ],
         profileImageUrl: "https://discourse.ubuntu-kr.org/user_avatar/discourse.ubuntu-kr.org/choo121600/144/12050_2.png"
     },
     {
-        name: "Minseok Jang",
-        team: "Ubuntu Korea Community",
+        name: "장민석",
+        team: "우분투한국커뮤니티",
         role: [
             "role_contents",
             "role_venue_safety",
@@ -119,8 +119,8 @@ export const committeeMembers: CommitteeMember[] = [
         profileImageUrl: uck26Logo.src
     },
     {
-        name: "Hyeongjun Kwon",
-        team: "Ubuntu Korea Community",
+        name: "권형준",
+        team: "우분투한국커뮤니티",
         role: [
             "role_sponsorship_finances",
             "role_venue_safety",
@@ -128,8 +128,8 @@ export const committeeMembers: CommitteeMember[] = [
         profileImageUrl: uck26Logo.src
     },
     {
-        name: "Jinseok An",
-        team: "Ubuntu Korea Community",
+        name: "안진석",
+        team: "우분투한국커뮤니티",
         role: [
             "role_marketing_design",
             "role_venue_safety"
@@ -137,7 +137,7 @@ export const committeeMembers: CommitteeMember[] = [
         profileImageUrl: uck26Logo.src
     },
     {
-        name: "Hojun Lee",
+        name: "이호준",
         team: "Debian",
         role: [
             "role_mdc",
@@ -146,7 +146,7 @@ export const committeeMembers: CommitteeMember[] = [
         profileImageUrl: uck26Logo.src
     },
     {
-        name: "Jongmin Kim",
+        name: "김종민",
         team: "Debian",
         role: [
             "role_mdc",
@@ -155,7 +155,7 @@ export const committeeMembers: CommitteeMember[] = [
         profileImageUrl: "https://avatars.githubusercontent.com/u/3622008?v=4"
     },
     {
-        name: "Changwoo Ryu",
+        name: "류창우",
         team: "Debian",
         role: [
             "role_mdc",
@@ -164,7 +164,7 @@ export const committeeMembers: CommitteeMember[] = [
         profileImageUrl: uck26Logo.src
     },
     {
-        name: "Seyong Park",
+        name: "박세용",
         team: "",
         role: [
             "role_venue_safety",
