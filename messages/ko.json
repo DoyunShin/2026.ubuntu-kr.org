@@ -63,6 +63,8 @@
     "nav_links_docs": "문서",
     "nav_links_chat": "채팅",
     "nav_register": "등록 마감",
+    "nav_ticket": "티켓",
+    "nav_ticket_type": "티켓 종류 및 할인",
     "nav_check_ticket": "티켓 확인",
     "nav_buy_ticket": "티켓 구매",
     "role_general": "총괄",

@@ -31,6 +31,24 @@ export const WebsiteConfig = {
                 childs: []
             },
             {
+                label: m["nav_ticket"](),
+                link: "#",
+                childs: [
+                    {
+                        label: m["nav_buy_ticket"](),
+                        link: "https://2026.ubuntu-kr.org/tickets",
+                    },
+                    {
+                        label: m["nav_check_ticket"](),
+                        link: "https://event-us.kr/mypage/allevent",
+                    },
+                    {
+                        label: m["nav_ticket_type"](),
+                        link: `/${locale}/tickets/type`
+                    }
+                ]
+            },
+            {
                 label: m["nav_programs"](),
                 link: "#",
                 childs: [
@@ -104,11 +122,6 @@ export const WebsiteConfig = {
             link: "https://korea2026.mini.debconf.org/",
             childs: []
         },
-        {
-            label: "🎟️",
-            link: "/tickets",
-            childs: []
-        }
     ],
     footer: {
         copyright: "© 2025-Present Ubuntu Korea Community. Ubuntu and Canonical are registered trademarks of Canonical Ltd. Unless otherwise noted, content licensed under CC BY 4.0 source code under MIT.",
@@ -128,6 +141,12 @@ export const WebsiteConfig = {
                     label: m["nav_buy_ticket"](),
                     link: "https://2026.ubuntu-kr.org/tickets",
                     class: "p-button--positive",
+                    target: "_blank"
+                },
+                {
+                    label: m["nav_check_ticket"](),
+                    link: "https://event-us.kr/mypage/allevent",
+                    class: "p-button",
                     target: "_blank"
                 },
                 {

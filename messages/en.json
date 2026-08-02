@@ -63,6 +63,8 @@
     "nav_links_docs": "Docs",
     "nav_links_chat": "Chat",
     "nav_register": "Registration Closed",
+    "nav_ticket": "Tickets",
+    "nav_ticket_type": "Ticket Type and Discounts",
     "nav_check_ticket": "Check your ticket",
     "nav_buy_ticket": "Buy your ticket",
     "role_general": "General",
