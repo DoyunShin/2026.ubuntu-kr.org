@@ -3,8 +3,10 @@ import canonicalLogo from "@assets/sponsors/ubuntu.png";
 import canonicalWhite from "@assets/sponsors/ubuntu_white.png";
 import awsLogo from "@assets/sponsors/aws.png";
 import awsWhite from "@assets/sponsors/aws_white.png";
-import ksugLogo from "@assets/sponsors/ksug.png";
 import groMetricLogo from "@assets/sponsors/grometric.svg";
+import ksugLogo from "@assets/sponsors/ksug.png";
+import cppKoreaLogo from "@assets/sponsors/cppkorea.svg";
+import pythonKrLogo from "@assets/sponsors/pythonkr.png";
 
 
 export type Sponsor = {
@@ -77,18 +79,18 @@ export const sponsors = [
     },
     {
         sponsorLevelName: "Media",
-        sizeOnLargeScreen: 3,
-        sizeOnMediumScreen: 3,
-        sizeOnSmallScreen: 2,
+        sizeOnLargeScreen: 2,
+        sizeOnMediumScreen: 2,
+        sizeOnSmallScreen: 1,
         showPopup: true,
         list: [
         ] as Sponsor[]
     },
     {
         sponsorLevelName: "Community",
-        sizeOnLargeScreen: 3,
-        sizeOnMediumScreen: 3,
-        sizeOnSmallScreen: 2,
+        sizeOnLargeScreen: 2,
+        sizeOnMediumScreen: 2,
+        sizeOnSmallScreen: 1,
         showPopup: true,
         list: [
             {
@@ -96,6 +98,19 @@ export const sponsors = [
                 logoUrl: ksugLogo.src,
                 url: "https://www.ksug.org",
                 description: "KSUG는 스프링을 사용하거나 관심있는 사람들이 모여 뉴스와 정보를 공유하고 문제를 같이 해결하는 곳이며 스터디, 세미나, 컨퍼런스 참여 등의 오프라인 활동을 합니다."
+            },
+            {
+                name: "C++ Korea",
+                logoUrl: cppKoreaLogo.src,
+                url: "https://github.com/cppkorea",
+                prevSponsored: 2,
+                description: "한국에서 C++을 사용하는 사람들에게 도움이 되는 정보를 공유하고 서로 발전하기 위한 취지로 2013년 10월 8일에 개설한 커뮤니티입니다."
+            },
+            {
+                name: "파이썬한국사용자모임",
+                logoUrl: pythonKrLogo.src,
+                url: "https://2026.pycon.kr",
+                description: "파이썬 한국 사용자 모임은 파이썬을 사용하는 모든 사람들을 위한 열린 커뮤니티입니다. 2026년 파이콘은 동국대학교에서 8월 15일부터 17일까지 열립니다."
             }
         ] as Sponsor[]
     }

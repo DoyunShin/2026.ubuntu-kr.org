@@ -41,22 +41,22 @@ export default function SponsorLogoAndModal(props: SponsorLogoAndModalProps) {
                     setModalOpen(true); 
                     document.addEventListener("keydown", closeKeyListener);
                 }
-            }} aria-controls={`modal-${props.level}-${props.index}`}>
-                {props.prevSponsored &&
-                    <p aria-label={`Sponsored ${props.prevSponsored} times`} style={{ display: 'block', width: "100%", marginBottom: "-1rem", textAlign: "end" }}>
-                        <span className="p-badge">
-                            {props.prevSponsored}
-                        </span>
-                    </p>
-                }
+            }} aria-controls={`modal-${props.level}-${props.index}`} style={{ display: "flex", alignItems: "start" }}>
                 <img src={
                     theme === "dark" && props.invertedLogo 
                         ? props.invertedLogo
                         : props.logoImageSrc
                     }
                     alt={props.name} loading="lazy" decoding="async"
-                    style={{ maxHeight: props.level === "Community" ? "3rem" : "10rem" }}
+                    style={{ maxHeight: props.level === "Community" ? "3rem" : "10rem", minWidth: "2.4rem" }}
                 />
+                {props.prevSponsored &&
+                    <p aria-label={`Sponsored ${props.prevSponsored} times`} style={{ marginTop: "-0.5rem", textAlign: "end" }}>
+                        <span className="p-badge">
+                            {props.prevSponsored}
+                        </span>
+                    </p>
+                }
             </button>
            
             <div className="p-modal" id={`modal-${props.level}-${props.index}`} style={{display: modalOpen && props.showPopup ? "flex" : "none"}}>
@@ -78,7 +78,7 @@ export default function SponsorLogoAndModal(props: SponsorLogoAndModalProps) {
                             ? props.invertedLogo
                             : props.logoImageSrc
                         } alt={props.name} loading="lazy" decoding="async" 
-                        style={{ maxHeight: "10rem" }} className="p-logo-section__logo"
+                        style={{ maxHeight: "10rem", minHeight: "1rem" }} className="p-logo-section__logo"
                     />
                 </div>
                 <h1>{props.name}</h1>
