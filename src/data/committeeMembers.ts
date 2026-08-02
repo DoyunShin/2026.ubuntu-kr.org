@@ -1,4 +1,5 @@
 import uck26Logo from "@assets/logo.svg";
+import euiseoProfile from "@assets/committiee/euiseo.jpg";
 import type { TranslationKey } from "../i18n/utils.ts";
 
 type CommitteeMember = {
@@ -27,7 +28,7 @@ export const committeeMembers: CommitteeMember[] = [
             "role_sponsorship_finances",
             "role_contents"
         ],
-        profileImageUrl: "https://media.discordapp.net/attachments/1470992394513289453/1523537121519079706/LEGQkMFl_400x400.jpg?ex=6a4c7803&is=6a4b2683&hm=805b2df3c895d88d70262f7bf20c16c64b87d848e9bb76634991b9cfdff4a743&="
+        profileImageUrl: euiseoProfile.src
     },
     {
         name: "Giyeon Bang",
