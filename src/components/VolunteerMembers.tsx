@@ -39,9 +39,6 @@ export default function VolunteerMembers() {
                         <div className="p-media-object__details">
                             <h4 className="u-no-padding--top" style={{ marginBottom: "0.1rem" }}>{member.name}</h4>
                             <p className="p-media-object__content">
-                                {member.team}
-                            </p>
-                            <p className="p-media-object__content">
                                 {member.role.map((role, idx) => (
                                     <span className={`u-no-margin--bottom ${idx === 0 ? "p-chip--information" : "p-chip"}`} key={idx}>
                                         {m(role)}
