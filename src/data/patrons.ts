@@ -34,6 +34,14 @@ export const patrons = [
     {
         name: "김정현",
         org: "CatapultLabs"
+    },
+    {
+        name: "정규석",
+        org: "우분투한국커뮤니티"
+    },
+    {
+        name: "김익수",
+        org: "아마존웹서비시즈코리아 유한책임회사"
     }
 ]
 
