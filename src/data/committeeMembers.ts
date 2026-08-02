@@ -65,7 +65,7 @@ export const committeeMembers: CommitteeMember[] = [
     },
     {
         name: "김세진",
-        team: "",
+        team: "우분투한국커뮤니티",
         role: [
             "role_general",
             "role_sponsorship_finances",
