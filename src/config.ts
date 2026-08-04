@@ -64,14 +64,14 @@ export const WebsiteConfig = {
                         label: m["nav_programs_topics"](),
                         link: `/${locale}/programs/topics`
                     },
-            //         {
-            //             label: m["nav_programs_timetable"](),
-            //             link: `/${locale}/programs/timetable`
-            //         },
-                    // {
-                    //     label: m["nav_programs_speakers"](),
-                    //     link: "https://events.canonical.com/event/153/contributions/speakers"
-                    // },
+                    {
+                        label: m["nav_programs_timetable"](),
+                        link: `/${locale}/programs/timetable`
+                    },
+                    {
+                        label: m["nav_programs_speakers"](),
+                        link: "https://events.canonical.com/event/153/contributions/speakers"
+                    },
             //         {
             //             label: m["nav_programs_social"](),
             //             link: "https://github.com/ubuntu-kr/ksp-toolkits/blob/master/ksp/ksp-20250809/readme.md"
@@ -150,31 +150,28 @@ export const WebsiteConfig = {
                     target: "_blank"
                 },
                 {
+                    label: m["nav_programs_timetable"](),
+                    link: `/${locale}/programs/timetable`,
+                    class: "p-button"
+                },
+                {
                     label: m["mainBanner_lastyear"](),
                     link: `https://www.youtube.com/watch?v=Kd43K8vKK-U&list=PLumkkj1MBmYuX9KKrO_T5pnByF23keWCv`,
                     class: "p-button",
                     target: "_blank"
                 },
-                // {
-                //     label: m["nav_programs_timetable"](),
-                //     link: `/${locale}/programs/timetable`,
-                //     class: "p-button"
-                // }
             ]
         },
         logo: UCKLogo
     },
     featuredSpeakers: {
-        indicoExportUrl: "https://events.canonical.com/export/event/126.json?detail=contributions&occ=yes&pretty=yes",
-        contributionIds: [] as number[],
-        speakerIds: [] as Speakers,
-    //     contributionIds: [27, 5, 16, 9, 2, 8],
-    //     speakerIds: [
-    //         { db_id: 981, user: 3035 }, { db_id: 979, user: 1123 }, { db_id: 978, user: 939 },
-    //         { db_id: 986, user: 4167 }, { db_id: 952, user: 4181 }, { db_id: 532, user: 4182 },
-    //         { db_id: 975, user: 4176 }, { db_id: 999, user: 836 },
-    //     ],
-        fullSchedulesUrl: "https://events.canonical.com/event/126/contributions/"
+        indicoExportUrl: "https://events.canonical.com/export/event/153.json?detail=contributions&occ=yes&pretty=yes",
+        contributionIds: [13, 5, 2],
+        speakerIds: [
+            { db_id: 1373, user: 1402 }, { db_id: 1333, user: 1382 }, { db_id: 1332, user: 1381 },
+            { db_id: 1368, user: 1375 }
+        ],
+        fullSchedulesUrl: "https://events.canonical.com/event/153/contributions/"
     },
     topics: {
         last: {
@@ -183,14 +180,14 @@ export const WebsiteConfig = {
         }
     },
     timetable: {
-        halls: ["jeju", "donghae", "dokdo"],
-        indicoExportUrl: "https://events.canonical.com/export/timetable/126.json",
+        halls: ["서원 | 국자감", "집현전", "빌더스룸"],
+        indicoExportUrl: "https://events.canonical.com/export/timetable/153.json",
         baseUrl: "https://events.canonical.com",
-        showDetails: "https://events.canonical.com/event/126/timetable/?layout=room",
+        showDetails: "https://events.canonical.com/event/153/timetable/?layout=room",
         difficulty: {
-            beginner: [4, 5, 6, 8, 10, 11, 13, 18, 19, 25, 30],
-            intermediate: [9, 3, 12, 2, 1],
-            advanced: [20, 16]
+            beginner: [6, 8, 12, 2],
+            intermediate: [16,  4, 11, 5, 18],
+            advanced: [13]
         }
     },
     cityBanner: {
