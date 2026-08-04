@@ -5,11 +5,6 @@ export interface SubMenuItem {
     label: string;
 }
 
-export type Speakers = Array<{
-    db_id: number;
-    user: number;
-}>;
-
 export type WebSiteConfig = {
     siteTitle: string;
     siteDescription: string;
@@ -50,7 +45,7 @@ export type WebSiteConfig = {
     featuredSpeakers: {
         indicoExportUrl: string;
         contributionIds: number[];
-        speakerIds: Speakers;
+        speakerPictures: Record<number, ImageMetadata>;
         fullSchedulesUrl: string;
     };
     topics: {
@@ -64,6 +59,7 @@ export type WebSiteConfig = {
         indicoExportUrl: string;
         baseUrl: string;
         showDetails: string;
+        miniDebConf: string;
         difficulty: {
             beginner: number[];
             intermediate: number[];

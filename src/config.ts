@@ -4,8 +4,11 @@ import UCKLogo from './assets/logo.svg';
 import DebianLogo from './assets/Debian.svg';
 import MicrosoftKoreaVenueImage from './assets/hall.jpg';
 import UbuntuKoreaLogo from "./assets/UbuntuKorea.svg";
+import YangSooYoonProfile from "./assets/speakers/1332.png";
+import FlorentianaYuwonoProfile from "./assets/speakers/1333.png";
+import MinjinParkProfile from "./assets/speakers/1373.png";
 import { baseLocale, setLocale } from "./paraglide/runtime.js";
-import type { Speakers, WebSiteConfig } from "./types/config.types.ts";
+import type { WebSiteConfig } from "./types/config.types.ts";
 
 export const WebsiteConfig = {
     siteTitle: "UbuCon Korea 2026",
@@ -167,10 +170,11 @@ export const WebsiteConfig = {
     featuredSpeakers: {
         indicoExportUrl: "https://events.canonical.com/export/event/153.json?detail=contributions&occ=yes&pretty=yes",
         contributionIds: [979, 948, 975],
-        speakerIds: [
-            { db_id: 1373, user: 1402 }, { db_id: 1333, user: 1382 }, { db_id: 1332, user: 1381 },
-            { db_id: 1368, user: 1375 }
-        ],
+        speakerPictures: {
+            1373: MinjinParkProfile,
+            1333: FlorentianaYuwonoProfile,
+            1332: YangSooYoonProfile,
+        } as Record<number, ImageMetadata>,
         fullSchedulesUrl: "https://events.canonical.com/event/153/contributions/"
     },
     topics: {
@@ -184,6 +188,7 @@ export const WebsiteConfig = {
         indicoExportUrl: "https://events.canonical.com/export/timetable/153.json",
         baseUrl: "https://events.canonical.com",
         showDetails: "https://events.canonical.com/event/153/timetable/?layout=room",
+        miniDebConf: "https://korea2026.mini.debconf.org/schedule/",
         difficulty: {
             beginner: [956, 976, 978, 975],
             intermediate: [980, 949, 977, 948, 981],

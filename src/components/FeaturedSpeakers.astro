@@ -3,6 +3,7 @@ import { WebsiteConfig } from "../config";
 import eventLogo from "@assets/logo.svg";
 import { extractLocaleFromUrl } from "../paraglide/runtime";
 import { useTranslations } from "../i18n/utils.ts";
+import { Image } from "astro:assets";
 
 const locale = extractLocaleFromUrl(Astro.url);
 const m = useTranslations(locale);
@@ -21,19 +22,16 @@ for (const session of featuredSessions) {
     if (session.speakers.length === 0) {
         featuredSpeakers.push({
             name: "TBD",
-            profileImg: null,
+            profileImg: eventLogo,
             title: session.title,
             url: session.url
         });
     }
     
     for (const speaker of session.speakers) {
-        const imgId = WebsiteConfig.featuredSpeakers.speakerIds.find(
-            (user) => speaker.db_id === user.db_id
-        );
         featuredSpeakers.push({
             name: `${speaker.first_name} ${speaker.last_name}`,
-            profileImg: imgId?.user,
+            profileImg: WebsiteConfig.featuredSpeakers.speakerPictures[speaker.db_id] ?? eventLogo,
             title: session.title,
             url: session.url
         })
@@ -54,11 +52,7 @@ for (const session of featuredSessions) {
             {featuredSpeakers.map((speaker) => (
                 <div class="col-4 col-medium-3">
                     <a class="p-media-object--large p-button--base" href={speaker.url} target="_blank">
-                        <img src={speaker.profileImg ? 
-                                `https://events.canonical.com/user/${speaker.profileImg}/picture-default`
-                                : eventLogo.src
-                            }
-                            onerror={`this.onerror=null;this.src=${eventLogo.src}`}
+                        <Image src={speaker.profileImg}
                             class="p-media-object__image is-round"
                             alt=""
                             loading="lazy"
