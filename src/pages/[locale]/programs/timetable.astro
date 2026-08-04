@@ -34,7 +34,7 @@ const halls = WebsiteConfig.timetable.halls;
 const lastUpdate = new Intl.DateTimeFormat(locale, { 
   dateStyle: "long", timeStyle: "full", timeZone: "Asia/Seoul"
 }).format(new Date());
-const getHallLabel = (hall: string) => m(`timetable_${hall}` as TranslationKey);
+const getHallLabel = (hall: string) => hall;
 
 sessions.sort(function(a:any, b: any) {
   const aTime = Date.parse(`${a.startDate.date}T${a.startDate.time}Z`);
@@ -94,14 +94,14 @@ sessions.sort(function(a:any, b: any) {
           {halls.map((hall, idx) => {
             const label = getHallLabel(hall);
             return (
-              <table tabindex="0" role="tabpanel" id={`${hall}-tab`} aria-labelledby={hall} hidden={idx !== 0 ? "hidden" : ""} class="u-table-layout--auto">
+              <table tabindex="0" role="tabpanel" id={`${hall}-tab`} aria-labelledby={hall} hidden={idx !== 0 ? true : false} class="u-table-layout--auto">
                 <thead>
                   <th>{m("timetable_time")}</th>
                   <th>{label}</th>
                 </thead>
                 <tbody>
                   {sessions.filter((s:any) => s.room.toLowerCase().includes(hall) || s.room === "").map((s:any) => {
-                    const contributions = fullSessionInfo.filter((c:any) => c.friendly_id === s.friendlyId);
+                    const contributions = fullSessionInfo.filter((c:any) => c.db_id === s.contributionId);
                     return (
                     <tr>
                       <th>{s.startDate.time.slice(0, -3)}</th>
@@ -118,18 +118,18 @@ sessions.sort(function(a:any, b: any) {
                               {contributions[0].type}
                             </span>
                           ):""}
-                          {WebsiteConfig.timetable.difficulty.beginner.includes(s.friendlyId) ? (
+                          {WebsiteConfig.timetable.difficulty.beginner.includes(s.friendlyId) && (
                             <span class="difficulty">★☆☆☆☆</span>
-                          ): ""}
-                          {WebsiteConfig.timetable.difficulty.intermediate.includes(s.friendlyId) ? (
+                          )}
+                          {WebsiteConfig.timetable.difficulty.intermediate.includes(s.friendlyId) && (
                             <span class="difficulty">★★★☆☆</span>
-                          ): ""}
-                          {WebsiteConfig.timetable.difficulty.advanced.includes(s.friendlyId) ? (
+                          )}
+                          {WebsiteConfig.timetable.difficulty.advanced.includes(s.friendlyId) && (
                             <span class="difficulty">★★★★★</span>
-                          ): ""}
-                          {WebsiteConfig.featuredSpeakers.contributionIds.includes(s.friendlyId) ? (
+                          )}
+                          {WebsiteConfig.featuredSpeakers.contributionIds.includes(s.friendlyId) && (
                             <span class="featured">●</span>
-                          ):""}  
+                          )}
                           </span>
                           <h2 class="p-heading--4">
                           {s.title}
