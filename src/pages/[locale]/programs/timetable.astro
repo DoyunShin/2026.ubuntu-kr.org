@@ -118,16 +118,16 @@ sessions.sort(function(a:any, b: any) {
                               {contributions[0].type}
                             </span>
                           ):""}
-                          {WebsiteConfig.timetable.difficulty.beginner.includes(s.friendlyId) && (
+                          {WebsiteConfig.timetable.difficulty.beginner.includes(s.contributionId) && (
                             <span class="difficulty">★☆☆☆☆</span>
                           )}
-                          {WebsiteConfig.timetable.difficulty.intermediate.includes(s.friendlyId) && (
+                          {WebsiteConfig.timetable.difficulty.intermediate.includes(s.contributionId) && (
                             <span class="difficulty">★★★☆☆</span>
                           )}
-                          {WebsiteConfig.timetable.difficulty.advanced.includes(s.friendlyId) && (
+                          {WebsiteConfig.timetable.difficulty.advanced.includes(s.contributionId) && (
                             <span class="difficulty">★★★★★</span>
                           )}
-                          {WebsiteConfig.featuredSpeakers.contributionIds.includes(s.friendlyId) && (
+                          {WebsiteConfig.featuredSpeakers.contributionIds.includes(s.contributionId) && (
                             <span class="featured">●</span>
                           )}
                           </span>

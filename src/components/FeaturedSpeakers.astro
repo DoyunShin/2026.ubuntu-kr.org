@@ -13,7 +13,7 @@ const sessions = indicoResJson.results
     ? indicoResJson.results[0].contributions
     : null;
 const featuredSessions = sessions.filter((session: any) => {
-    return WebsiteConfig.featuredSpeakers.contributionIds.includes(session.friendly_id);
+    return WebsiteConfig.featuredSpeakers.contributionIds.includes(session.db_id);
 });
 
 const featuredSpeakers = [];

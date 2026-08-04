@@ -166,7 +166,7 @@ export const WebsiteConfig = {
     },
     featuredSpeakers: {
         indicoExportUrl: "https://events.canonical.com/export/event/153.json?detail=contributions&occ=yes&pretty=yes",
-        contributionIds: [13, 5, 2],
+        contributionIds: [979, 948, 975],
         speakerIds: [
             { db_id: 1373, user: 1402 }, { db_id: 1333, user: 1382 }, { db_id: 1332, user: 1381 },
             { db_id: 1368, user: 1375 }
@@ -185,9 +185,9 @@ export const WebsiteConfig = {
         baseUrl: "https://events.canonical.com",
         showDetails: "https://events.canonical.com/event/153/timetable/?layout=room",
         difficulty: {
-            beginner: [6, 8, 12, 2],
-            intermediate: [16,  4, 11, 5, 18],
-            advanced: [13]
+            beginner: [956, 976, 978, 975],
+            intermediate: [980, 949, 977, 948, 981],
+            advanced: [979]
         }
     },
     cityBanner: {
