@@ -99,7 +99,7 @@ IT 전문가와 미래의 전문가를 꿈꾸는 이의 동반자로 30년 한 �
                 
 😸데브잇냥 구독하기 [https://hanbit.co.kr/devletter/](https://hanbit.co.kr/devletter/)`
             },
-        ]
+        ] as Sponsor[]
     },
     {
         sponsorLevelName: "Community",
