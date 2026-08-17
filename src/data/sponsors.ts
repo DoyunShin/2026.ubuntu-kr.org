@@ -89,6 +89,7 @@ export const sponsors = [
                 name: "한빛미디어",
                 logoUrl: hanbitLogo.src,
                 url: "https://www.hanbit.co.kr/media",
+                prevSponsored: 3,
                 description:
                     `한빛미디어(주)는 책으로 여는 IT 세상을 만들고 있습니다.
 
