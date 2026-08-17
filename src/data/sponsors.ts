@@ -7,6 +7,7 @@ import groMetricLogo from "@assets/sponsors/grometric.svg";
 import ksugLogo from "@assets/sponsors/ksug.png";
 import cppKoreaLogo from "@assets/sponsors/cppkorea.svg";
 import pythonKrLogo from "@assets/sponsors/pythonkr.png";
+import hanbitLogo from "@assets/sponsors/hanbit-media.svg";
 
 
 export type Sponsor = {
@@ -84,7 +85,20 @@ export const sponsors = [
         sizeOnSmallScreen: 1,
         showPopup: true,
         list: [
-        ] as Sponsor[]
+            {
+                name: "한빛미디어",
+                logoUrl: hanbitLogo.src,
+                url: "https://www.hanbit.co.kr/media",
+                description:
+                    `한빛미디어(주)는 책으로 여는 IT 세상을 만들고 있습니다.
+
+우리 시대의 주역들을 위한 프로그래밍, 컴퓨터 공학, IT 에세이와 더불어 일반 사용자를 위한 OA, 그래픽 등 IT 활용서와 나와 내 아이를 위한 실용서까지 다양한 분야의 책으로 IT 세상을 만들어 가고 있습니다.
+                
+IT 전문가와 미래의 전문가를 꿈꾸는 이의 동반자로 30년 한 길을 걸어온 한빛미디어(주)는 앞으로도 여러분과 함께 그려가는 멋진 미래를 꿈꾸며 '책으로 여는 IT 세상'을 만들어 가겠습니다. 한빛미디어가 만드는 IT뉴스레터 데브잇냥에도 많은 응원 부탁드립니다.
+                
+😸데브잇냥 구독하기 [https://hanbit.co.kr/devletter/](https://hanbit.co.kr/devletter/)`
+            },
+        ]
     },
     {
         sponsorLevelName: "Community",
