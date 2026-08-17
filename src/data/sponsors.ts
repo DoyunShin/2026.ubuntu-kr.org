@@ -82,7 +82,7 @@ export const sponsors = [
         sponsorLevelName: "Media",
         sizeOnLargeScreen: 2,
         sizeOnMediumScreen: 2,
-        sizeOnSmallScreen: 1,
+        sizeOnSmallScreen: 2,
         showPopup: true,
         list: [
             {
@@ -105,7 +105,7 @@ IT 전문가와 미래의 전문가를 꿈꾸는 이의 동반자로 30년 한 �
         sponsorLevelName: "Community",
         sizeOnLargeScreen: 2,
         sizeOnMediumScreen: 2,
-        sizeOnSmallScreen: 1,
+        sizeOnSmallScreen: 2,
         showPopup: true,
         list: [
             {
