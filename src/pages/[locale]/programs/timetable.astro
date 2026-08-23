@@ -91,7 +91,7 @@ sessions.sort(function(a:any, b: any) {
             </div>
             <div class="p-tabs__item" tabindex="-2">
               <a class="p-tabs__link" id="full" href={WebsiteConfig.timetable.miniDebConf} target="_blank">
-                <span>{m("timetable_full")}(성균관, MiniDebConf Korea)</span>
+                <span>{m("timetable_detail_mdc")}</span>
                 <i class="p-icon--external-link" />
               </a>
             </div>
@@ -123,7 +123,11 @@ sessions.sort(function(a:any, b: any) {
                             }>
                               {contributions[0].type}
                             </span>
-                          ):""}
+                          ): s.room === "4. 이노베이션 룸" && !s.title.includes("휴식") && (
+                            <span class="p-chip--information">
+                              강연(Talk / 40분)
+                            </span>
+                          )}
                           {WebsiteConfig.timetable.difficulty.beginner.includes(s.contributionId) && (
                             <span class="difficulty">★☆☆☆☆</span>
                           )}

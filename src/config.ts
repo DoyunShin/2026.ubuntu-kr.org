@@ -184,7 +184,7 @@ export const WebsiteConfig = {
         }
     },
     timetable: {
-        halls: ["성균관", "서원 | 국자감", "집현전", "빌더스룸"],
+        halls: ["서원 | 국자감", "집현전", "빌더스룸", "이노베이션 룸"],
         indicoExportUrl: "https://events.canonical.com/export/timetable/153.json",
         baseUrl: "https://events.canonical.com",
         showDetails: "https://events.canonical.com/event/153/timetable/?layout=room",
