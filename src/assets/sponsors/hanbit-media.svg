@@ -10,8 +10,8 @@
    stroke-linejoin="round"
    xml:space="preserve"
    id="svg304"
-   sodipodi:docname="Hanbitmedia CI 2009_cs4 -.svg"
-   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   sodipodi:docname="hanbit-media.svg"
+   inkscape:version="1.4.3 (0d15f75042, 2025-12-25)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -30,15 +30,17 @@
    fit-margin-left="0"
    fit-margin-right="0"
    fit-margin-bottom="0"
-   inkscape:zoom="0.79378778"
-   inkscape:cx="597.13693"
-   inkscape:cy="231.79999"
-   inkscape:window-width="1920"
-   inkscape:window-height="1006"
+   inkscape:zoom="0.099223473"
+   inkscape:cx="5522.8867"
+   inkscape:cy="2640.5042"
+   inkscape:window-width="2560"
+   inkscape:window-height="1404"
    inkscape:window-x="0"
    inkscape:window-y="0"
    inkscape:window-maximized="1"
-   inkscape:current-layer="svg304" />
+   inkscape:current-layer="layer1"
+   inkscape:showpageshadow="2"
+   inkscape:deskcolor="#d1d1d1" />
  <defs
    class="ClipPathGroup"
    id="defs8">
@@ -145,7 +147,18 @@
    id="path41" />
   </g>
  </defs>
- <g
+ 
+ 
+<g
+   inkscape:groupmode="layer"
+   id="layer1"
+   inkscape:label="Layer 0"><rect
+     style="fill:#ffffff;stroke-width:746.707"
+     id="rect3"
+     width="26785.898"
+     height="4969.373"
+     x="-387.1557"
+     y="-369.59286" /></g><g
    id="g49"
    transform="translate(-1960,-4359)">
   <g
@@ -158,8 +171,7 @@
    id="bo-id2"
    class="BackgroundObjects" />
   </g>
- </g>
- <g
+ </g><g
    class="SlideGroup"
    id="g302"
    transform="translate(-1960,-4359)">
@@ -913,5 +925,4 @@
     </g>
    </g>
   </g>
- </g>
-</svg>
+ </g></svg>
