@@ -78,7 +78,7 @@ export default function SponsorLogoAndModal(props: SponsorLogoAndModalProps) {
                             ? props.invertedLogo
                             : props.logoImageSrc
                         } alt={props.name} loading="lazy" decoding="async" 
-                        style={{ maxHeight: "10rem", minHeight: "1rem" }} className="p-logo-section__logo"
+                        style={{ maxHeight: "10rem", minHeight: "1rem", maxWidth: "100%" }} className="p-logo-section__logo"
                     />
                 </div>
                 <h1>{props.name}</h1>
