@@ -15,6 +15,7 @@ type SponsorLogoAndModalProps = {
     showPopup: Boolean,
     index: number,
     invertedLogo?: string,
+    autoInvertLogo?: boolean,
     prevSponsored?: number
 }
 
@@ -48,7 +49,7 @@ export default function SponsorLogoAndModal(props: SponsorLogoAndModalProps) {
                         : props.logoImageSrc
                     }
                     alt={props.name} loading="lazy" decoding="async"
-                    style={{ maxHeight: props.level === "Community" ? "3rem" : "10rem", minWidth: "2.4rem" }}
+                    style={{ maxHeight: props.level === "Community" ? "3rem" : "10rem", minWidth: "2.4rem", filter: props.autoInvertLogo && theme === "dark" ? "invert(100%)" : "" }}
                 />
                 {props.prevSponsored &&
                     <p aria-label={`Sponsored ${props.prevSponsored} times`} style={{ marginTop: "-0.5rem", textAlign: "end" }}>
@@ -78,7 +79,7 @@ export default function SponsorLogoAndModal(props: SponsorLogoAndModalProps) {
                             ? props.invertedLogo
                             : props.logoImageSrc
                         } alt={props.name} loading="lazy" decoding="async" 
-                        style={{ maxHeight: "10rem", minHeight: "1rem", maxWidth: "100%" }} className="p-logo-section__logo"
+                        style={{ maxHeight: "10rem", minHeight: "1rem", maxWidth: "100%", filter: props.autoInvertLogo && theme === "dark" ? "invert(100%)" : "" }} className="p-logo-section__logo"
                     />
                 </div>
                 <h1>{props.name}</h1>
