@@ -4,7 +4,7 @@ import canonicalWhite from "@assets/sponsors/ubuntu_white.png";
 import awsLogo from "@assets/sponsors/aws.png";
 import awsWhite from "@assets/sponsors/aws_white.png";
 import groMetricLogo from "@assets/sponsors/grometric.svg";
-import ksugLogo from "@assets/sponsors/ksug.png";
+import ksugLogo from "@assets/sponsors/ksug.webp";
 import cppKoreaLogo from "@assets/sponsors/cppkorea.svg";
 import pythonKrLogo from "@assets/sponsors/pythonkr.png";
 import hanbitLogo from "@assets/sponsors/hanbit-media.svg";
@@ -112,7 +112,7 @@ IT 전문가와 미래의 전문가를 꿈꾸는 이의 동반자로 30년 한 �
                 name: "한국스프링사용자모임(KSUG)",
                 logoUrl: ksugLogo.src,
                 url: "https://www.ksug.org",
-                description: "KSUG는 스프링을 사용하거나 관심있는 사람들이 모여 뉴스와 정보를 공유하고 문제를 같이 해결하는 곳이며 스터디, 세미나, 컨퍼런스 참여 등의 오프라인 활동을 합니다."
+                description: "한국 스프링 사용자 모임(KSUG)은 2007년, '개발자들이 서로 지식과 기회를 주고받는 유저 그룹 문화를 한국에도 만들자'는 생각에서 시작됐습니다. KSUG는 스프링, JVM 생태계의 개발자들이 동료로서 기술과 경험을 나누고 새로운 인연을 만들며 함께 성장하는 커뮤니티입니다. 커뮤니티 컨퍼런스 Spring Camp를 중심으로 가을 세미나와 스터디 등 다양한 활동을 이어오며, 국내 개발자 생태계의 성장에 기여하고 있습니다."
             },
             {
                 name: "C++ Korea",
