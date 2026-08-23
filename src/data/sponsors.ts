@@ -8,6 +8,8 @@ import ksugLogo from "@assets/sponsors/ksug.webp";
 import cppKoreaLogo from "@assets/sponsors/cppkorea.svg";
 import pythonKrLogo from "@assets/sponsors/pythonkr.png";
 import hanbitLogo from "@assets/sponsors/hanbit-media.svg";
+import fossforallDark from "@assets/sponsors/fossforall_darkmode.svg";
+import fossforallLight from "@assets/sponsors/fossforall_lightmode.svg";
 
 
 export type Sponsor = {
@@ -126,6 +128,15 @@ IT 전문가와 미래의 전문가를 꿈꾸는 이의 동반자로 30년 한 �
                 logoUrl: pythonKrLogo.src,
                 url: "https://2026.pycon.kr",
                 description: "파이썬 한국 사용자 모임은 파이썬을 사용하는 모든 사람들을 위한 열린 커뮤니티입니다. 2026년 파이콘은 동국대학교에서 8월 15일부터 17일까지 열립니다."
+            },
+            {
+                name: "FOSS for All",
+                logoUrl: fossforallLight.src,
+                logoDarkTheme: fossforallDark.src,
+                url: "https://fossforall.org",
+                description: `FOSS for All (포스포올)은 지속 가능한 자유/오픈소스(Free and Open source) 생태계 구축을 위해 국내외 다양한 커뮤니티와 프로젝트가 모여 시작된 이니셔티브 입니다. 법인으로 보는 단체 등록과 첫 컨퍼런스 개최를 시작으로, 중장기적으로 비영리법인 설립과 공익법인(기부금단체) 지정과 프로젝트-커뮤니티-기업-사용자간 네트워크를 구축하는 등 다양한 활동을 전개하고자 합니다.
+
+이를 통해, 한국내는 물론 전세계 다양한 오픈소스 프로젝트 및 커뮤니티가 직접 법인을 설립하거나, 많은 서류 작업을 하거나, 그 외 운영에 필요한 각종 정보를 알기 위한 시행착오를 하지 않고도 투명하면서도 중요하다고 생각되는 것에 더 집중할 수 있도록 지원하여 지속 가능한 자유/오픈소스 생태계 구축에 기여하고자 합니다.`
             }
         ] as Sponsor[]
     }
